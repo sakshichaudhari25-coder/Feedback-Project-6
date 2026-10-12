@@ -1,0 +1,81 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+#contactList {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card h4 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.contact-container {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 15px 0;
+    color: #e2e8f0;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.delete-btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #475569;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #334155;
+    transform: translateY(-1px);
+}
+
+.delete-btn:active {
+    transform: translateY(0);
+}
+```

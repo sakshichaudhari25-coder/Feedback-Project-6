@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f1115;
+    color: #f8fafc;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #181c23;
+    border: 1px solid #2b3440;
+    border-radius: 20px;
+    box-shadow:0 20px 45px rgba(0, 0, 0, 0.45);
+    position: relative;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: #14b8a6;
+    border-radius: 0 0 10px 10px;
+}
+h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #f8fafc;
+    margin-bottom: 12px;
+}
+h1::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #14b8a6;
+    border-radius: 10px;
+    margin: 13px auto 0;
+}
+.subTitle {
+    text-align: center;
+    color: #9ca7b7;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+#noteForm {
+    width: 100%;
+}
+label{
+    display: block;
+    color: #dce2ea;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 23px;
+    background: #101318;
+    color: #f8fafc;
+    border: 1px solid #303a47;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+input:focus,
+textarea:focus {
+    border-color: #14b8a6;
+    box-shadow:
+        0 0 0 3px rgba(20, 184, 166, 0.12);
+}
+input::placeholder,
+textarea::placeholder {
+    color: #667181;
+}
+textarea {
+    min-height: 180px;
+    resize: vertical;
+    line-height: 1.6;
+}
+br {
+    display: none;
+}
+#noteForm button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #14b8a6;
+    color: #071312;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#noteForm button:hover {
+    background: #5eead4;
+    transform: translateY(-2px);
+    box-shadow:0 8px 20px rgba(20, 184, 166, 0.22);
+}
+#noteForm button:active {
+    transform: translateY(0);
+}
+body > a {
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    padding: 11px 20px;
+    background: #181c23;
+    color: #5eead4;
+    border: 1px solid #303a47;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+body > a:hover {
+    background: #20262d;
+    border-color: #14b8a6;
+    transform: translateY(-2px);
+}
+@media (max-width: 700px) {
+    body {
+        padding: 25px 15px;
+    }
+    .container {
+        margin: 25px auto;
+        padding: 32px 25px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 500px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 28px 18px;
+        border-radius: 16px;
+    }
+
+    .container::before {
+        left: 20px;
+        right: 20px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    .subTitle {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+    input,
+    textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    textarea {
+        min-height: 150px;
+    }
+
+    #noteForm button {
+        font-size: 15px;
+    }
+}
+@media (max-width: 350px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .subTitle {
+        font-size: 13px;
+    }
+}
