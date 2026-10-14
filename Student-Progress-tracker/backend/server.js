@@ -26,7 +26,7 @@ app.post("/student-progress",async(req,res)=>{
     const newTracker=new Tracker({
         name:name,
         course:course,
-        completionPercentage:completionPercentage
+        completionPercentage:Number(completionPercentage)
     })
     await newTracker.save()
 
@@ -52,6 +52,35 @@ app.get("/student-progress",async(req,res)=>{
 
         res.status(500).json({
             message:"Failed to get student progress"
+        })
+        
+    }
+})
+
+app.delete("/student-progress/:id",async(req,res)=>{
+    try{
+        const {id}= req.params;
+        if(!mongoose.isValidObjectId(id)){
+            return res.status(400).json({
+                message:"Invalid student progress ID"
+            })
+        }
+        const deleteProgress=await Tracker.findByIdAndDelete(id);
+
+        if(!deleteProgress){
+            return res.status(404).json({
+                message:"Student progress not found"
+            })
+        }
+
+        res.status(200).json({
+            message:"Student Progress deleted Successfully"
+        })
+    }catch (error){
+        console.log("Delete Progress Error:". error);
+
+        res.status(500).json({
+            message:"Failed TO delete student Progress"
         })
         
     }

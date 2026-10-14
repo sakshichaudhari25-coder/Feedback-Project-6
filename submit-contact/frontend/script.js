@@ -7,7 +7,7 @@ form.addEventListener("submit",async(e)=>{
     const email=document.getElementById("email").value
     const message=document.getElementById("message").value
 
-        try{
+try{
     const response=await fetch("/submit-contact",{
         method:"POST",
         headers:{
@@ -24,11 +24,11 @@ form.addEventListener("submit",async(e)=>{
     
     const result=await response.json()
     console.log(result);
-    if(result.success){
-        alert("Contact submitted successfully")
+    if(response.ok && result.success){
         form.reset()
-        alert("Failed to submit contact")
     }else{
+        console.log("Contact submission Failed;". result.message);
+        
     }
 }catch(error){
     console.log("Error submitting contact:",error);

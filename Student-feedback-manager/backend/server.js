@@ -59,7 +59,37 @@ app.get("/feedback",async(req,res)=>{
     }
 })
 
+app.delete("/feedback/:id", async(req,res)=>{
+    try{
+        const {id}=req.params;
+        console.log("Deleting feedback id:", id);
+        
+        if(!mongoose.isValidObjectId(id)){
+            return res.status(400).json({
+                message:"Invalid feedback ID"
+            })
+        }
+        const deleteFeedback=await Feedback.findByIdAndDelete(id)
 
+        if(!deleteFeedback){
+            return res.status(404).json({
+                message: "Feedback not found"
+            })
+        }
+
+        res.status(200).json({
+            message: "Feedback deleted successfully"
+     
+        })
+    } catch(error){
+        console.log("Error Delecting Feedback:", error);
+
+        res.status(500).json({
+             message: error.message
+        })
+        
+    }
+})
 app.listen(PORT,()=>{
     console.log(`Server Running on http://localhost:${PORT}`);
     
